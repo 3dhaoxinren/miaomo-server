@@ -67,6 +67,8 @@ sh deployment/restore.sh /absolute/path/inksight-local-backup.zip
 
 开发环境和可复现的测试命令见 [DEVELOPMENT.md](docs/DEVELOPMENT.md)。
 
+已验收的应用升级包与刷写/接线说明见 [ESP32-C3 A1 固件 Release](https://github.com/3dhaoxinren/miaomo-server/releases/tag/firmware-c3-a1-20261024)。升级包仅适配已说明的现有安装，先备份并通过包内离线检查，再写 app0。
+
 ESP32-C3 驱动 A1 四色屏出现中间竖向明暗带时，可参考 [A1 刷新修复与验证](docs/A1_REFRESH_FIX.md)。仓库提供针对指定固件基线的 [驱动修复源码与离线构建工具](firmware/esp32-c3-a1/README.md)，构建前严格校验基线哈希。它沿用现有接线与 InkSight 服务端接口，不是可直接替换任意固件的通用刷机包。
 
 查看服务日志：`docker compose logs --tail=100 backend web`。更改环境配置后执行 `docker compose up -d`。

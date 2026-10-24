@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="780" viewBox="0 0 1100 780">
+  <title>ESP32-C3 A1 四色屏固定接线</title>
+  <desc>GPIO4 to SCK, GPIO6 to MOSI, GPIO7 to CS, GPIO1 to DC, GPIO2 to RST, GPIO10 from BUSY, 3V3 to VCC and GND to GND. USB powers C3. This is a logical signal diagram, not connector pin order.</desc>
+  <rect width="1100" height="780" fill="#f8fafc"/>
+  <g font-family="Microsoft YaHei,Noto Sans CJK SC,Arial,sans-serif" fill="#172b3a">
+    <text x="60" y="58" font-size="29" font-weight="700">ESP32-C3 → A1 四色屏</text>
+    <text x="60" y="92" font-size="17">已验收原接线 · RST 固定为 GPIO2 · 逻辑示意，非排针物理顺序</text>
+    <rect x="70" y="166" width="300" height="466" rx="18" fill="#fff" stroke="#64748b" stroke-width="2"/>
+    <rect x="730" y="166" width="300" height="466" rx="18" fill="#fff" stroke="#64748b" stroke-width="2"/>
+    <text x="100" y="207" font-size="24" font-weight="700">ESP32-C3</text>
+    <text x="762" y="207" font-size="24" font-weight="700">A1 屏板</text>
+    <text x="70" y="141" font-size="18">USB 数据线供电 / 刷写</text>
+    <path d="M220 147 V166" stroke="#475569" stroke-width="4"/>
+    <g font-size="21">
+      <text x="110" y="258">GPIO4</text><text x="775" y="258">SCK / CLK</text>
+      <text x="110" y="305">GPIO6</text><text x="775" y="305">MOSI / DIN / SDA</text>
+      <text x="110" y="352">GPIO7</text><text x="775" y="352">CS</text>
+      <text x="110" y="399">GPIO1</text><text x="775" y="399">DC / D-C</text>
+      <text x="110" y="446" font-weight="700">GPIO2</text><text x="775" y="446" font-weight="700">RST / RES</text>
+      <text x="110" y="493">GPIO10</text><text x="775" y="493">BUSY</text>
+      <text x="110" y="550" fill="#b91c1c">3V3</text><text x="775" y="550" fill="#b91c1c">VCC / 3.3V</text>
+      <text x="110" y="597">GND</text><text x="775" y="597">GND</text>
+    </g>
+    <g fill="none" stroke-width="3">
+      <path d="M370 250 H730 M370 297 H730 M370 344 H730 M370 391 H730 M370 438 H730" stroke="#277c98"/>
+      <path d="M370 485 H730" stroke="#8361b0"/>
+      <path d="M370 542 H730" stroke="#b91c1c"/>
+      <path d="M370 589 H730" stroke="#475569"/>
+    </g>
+    <g font-size="17" text-anchor="middle">
+      <text x="550" y="235">时钟 →</text><text x="550" y="282">图像数据 →</text>
+      <text x="550" y="329">片选 →</text><text x="550" y="376">命令 / 数据 →</text>
+      <text x="550" y="423">复位 →</text><text x="550" y="470">← 忙状态</text>
+      <text x="550" y="527" fill="#b91c1c">3.3 V 电源 →</text><text x="550" y="574">公共地</text>
+    </g>
+    <text x="70" y="681" font-size="20" font-weight="700">屏板 VCC 接 3V3，不能接 C3 的 5V。</text>
+    <text x="70" y="714" font-size="18">本次修复无需额外稳压；改线前断电，不同时进行 NFC 和 ESP32 刷新。</text>
+    <text x="70" y="747" font-size="16" fill="#526474">miaomo-server · 固件 2026-10-24 · 请同时阅读 WIRING.md 与 FLASHING.md</text>
+  </g>
+</svg>
