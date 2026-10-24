@@ -46,7 +46,7 @@ export function FramePanel({ images, edits, width, height, uploading, saving, pr
     </section>
     <div>
       <section className="local-panel frame-album-panel">
-        <div className="local-panel-header"><h2>{tr("相册", "Your album")}</h2><small>{images.length} / 6</small></div>
+        <div className="local-panel-header"><h2>{tr("相册", "Your album")}</h2><small>{images.length} {tr("张", "photos")}</small></div>
         <div className="album-strip">
           {images.map((url, i) => <div key={`${url}-${i}`} className={`album-photo ${current === i ? "is-selected" : ""}`}>
             <button type="button" aria-label={tr(`查看照片 ${i + 1}`, `View photo ${i + 1}`)} aria-pressed={current === i} onClick={() => { setIndex(i); setShowPreview(false); }}>
@@ -55,7 +55,7 @@ export function FramePanel({ images, edits, width, height, uploading, saving, pr
             </button>
             <div className="album-tools"><button type="button" aria-label={tr(`照片 ${i + 1} 前移`, `Move photo ${i + 1} earlier`)} disabled={i === 0 || saving} onClick={() => { onMove(i, i - 1); setIndex(i - 1); }}><ArrowLeft size={14} /></button><button type="button" aria-label={tr(`编辑照片 ${i + 1}`, `Edit photo ${i + 1}`)} disabled={saving} onClick={() => { setShowPreview(false); onEdit(i); }}><Pencil size={14} /></button><button type="button" aria-label={tr(`照片 ${i + 1} 后移`, `Move photo ${i + 1} later`)} disabled={i === images.length - 1 || saving} onClick={() => { onMove(i, i + 1); setIndex(i + 1); }}><ArrowRight size={14} /></button></div>
           </div>)}
-          {images.length < 6 && <button type="button" className="album-add" onClick={onAdd} disabled={uploading || saving}>{uploading ? <Loader2 size={22} className="animate-spin" /> : <Plus size={24} strokeWidth={1.4} />}<span>{uploading ? tr("上传中", "Uploading") : tr("添加照片", "Add photo")}</span></button>}
+          <button type="button" className="album-add" onClick={onAdd} disabled={uploading || saving}>{uploading ? <Loader2 size={22} className="animate-spin" /> : <Plus size={24} strokeWidth={1.4} />}<span>{uploading ? tr("上传中", "Uploading") : tr("添加照片", "Add photo")}</span></button>
         </div>
         <div className="album-actions"><Button variant="ghost" size="sm" onClick={() => { if (confirm(tr("从相框中移除这张照片？原始文件仍保留在本地。", "Remove this photo from the frame? The local file is kept."))) onRemove(current); }} disabled={!images.length || saving}><Trash2 size={14} />{tr("移除所选", "Remove selected")}</Button></div>
         <p className="mt-3">{tr("照片按顺序播放。点开编辑，可调整横竖屏、裁剪、旋转和缩放。", "Photos play in order. Edit to crop, rotate, zoom and change orientation.")}</p>
