@@ -17,6 +17,7 @@ source/webapp/node_modules
 source/webapp/.next
 source/webapp/.env*
 source/firmware
+firmware
 source/webapp/public/downloads
 **/*.apk
 **/*.aab

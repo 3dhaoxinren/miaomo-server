@@ -1,0 +1,12 @@
+build*/
+out*/
+.a1-build-*/
+__pycache__/
+*.pyc
+*.bin
+*.elf
+*.o
+payload.ld
+payload-disassembly.txt
+manifest.json
+VERIFICATION.json

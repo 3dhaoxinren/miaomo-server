@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-10-24",
+  "publication": "source-only",
+  "baseline_sha256": "52a4c30da2dc0aec87da317d5a0cd22895535c1dfdbad43c48a8f32584a01af0",
+  "candidate_sha256": "befb5bd8e02547f2ab21f36272e75e9b613e1a6f1c60130c6756bf1529023c10",
+  "candidate_bytes": 1202896,
+  "baseline_unchanged": true,
+  "accepted_driver_sources_unchanged": true,
+  "build_checks": {
+    "exact_baseline": true,
+    "esp_checksum_and_sha256": true,
+    "mmu_alignment": true,
+    "original_four_byte_hook": true,
+    "no_new_mutable_globals": true,
+    "original_loaded_bytes_preserved_except_hook": true,
+    "accepted_candidate_sha256_reproduced": true,
+    "wrong_base_cli_rejected_even_under_python_O": true
+  },
+  "tests": {
+    "stdlib_cases_passed": 13,
+    "rv32_scenarios_passed": 16,
+    "rv32_success_scenarios": 4,
+    "rv32_failure_scenarios": 12,
+    "non_a1_dispatch_and_original_prologue_passed": true,
+    "unicorn_version": "2.1.4"
+  },
+  "physical_acceptance": {
+    "user_reported_image_normal": true,
+    "user_reported_normal_after_restoring_original_c3_3v3": true,
+    "oscilloscope_or_cycle_life_validation": false
+  },
+  "limits": [
+    "File, GPIO, time and byte HAL modeled in RV32 tests.",
+    "Physical acceptance applies to the tested device and observed content.",
+    "No single register or supply arrangement established as sole root cause.",
+    "Full firmware images and private device artifacts are not part of this publication."
+  ],
+  "source_sha256": {
+    "a1_adapter.c": "54ca261385bf52a2c1450cfa3299eb3702d2bf76f08168a918e6bd63068a35c5",
+    "trampoline.S": "06930e0b9e633ff168fd31d1bc80339be99fef6c68a221251e0eb2ed129a56d8",
+    "build.py": "73ee282be95f518d8d90319132ada9a1c8bdcf09683bf0b40d383246b32c1b91",
+    "verify.py": "925a2be581c8b03e62e5e4ca7f408aa333acc04857d075885ba0a925aca9b965",
+    "test_build.py": "9f441860debbbc71189fdbed6bbd3e24c71bf0f97aaa973cd25931b53956b96d"
+  }
+}

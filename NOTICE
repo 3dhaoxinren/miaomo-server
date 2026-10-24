@@ -24,6 +24,18 @@ https://github.com/atunverse/moink/tree/081af81ec05c6a66f9fe6d5f598bcf229eff8723
 The referenced implementation and web-page source are not included. This reference
 credit does not describe moink as MIT-licensed or relicense its source code.
 
+A1 display-driver compatibility fix
+----------------------------------
+firmware/esp32-c3-a1 contains independently written compatibility code, build
+tools and synthetic verification tests for one exact existing firmware image.
+The observed A1 register/window/refresh contract was compared with:
+https://github.com/atunverse/moink/tree/081af81ec05c6a66f9fe6d5f598bcf229eff8723
+https://github.com/krstc/InkSight_adapt_HUAWEI_eink/tree/78ceea65ec754fcacc3a9a6036416b755bd2f64c
+Original upstream driver implementations and the third-party base firmware are
+not bundled. The firmware owner supplies their own matching base image. These
+references do not relicense Moink source or grant redistribution rights to a
+supplied binary. The original InkSight MIT notice above remains intact.
+
 Separately licensed fonts
 ------------------------
 Font files are not relicensed under the program's MIT license. Complete notices,

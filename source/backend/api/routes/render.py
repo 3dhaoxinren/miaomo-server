@@ -94,6 +94,7 @@ async def render(
                 headers["X-Refresh-Minutes"] = str(configured_refresh_minutes)
             if await consume_pending_refresh(mac):
                 headers["X-Pending-Refresh"] = "1"
+                headers["X-Preview-Push"] = "1"
             return Response(content=payload, media_type=media_type, headers=headers)
 
         if mac:
@@ -135,6 +136,7 @@ async def render(
                         headers["X-Refresh-Minutes"] = str(configured_refresh_minutes)
                     if await consume_pending_refresh(mac):
                         headers["X-Pending-Refresh"] = "1"
+                        headers["X-Preview-Push"] = "1"
                     return Response(content=out_bytes, media_type=out_media, headers=headers)
                 except (OSError, TypeError, UnidentifiedImageError, ValueError) as exc:
                     logger.warning("[RENDER] Failed to deliver pushed preview for %s: %s", mac, exc)
@@ -227,6 +229,7 @@ async def render(
             headers["X-Refresh-Minutes"] = str(configured_refresh_minutes)
         if mac and await consume_pending_refresh(mac):
             headers["X-Pending-Refresh"] = "1"
+            headers["X-Preview-Push"] = "1"
         if content_fallback:
             headers["X-Content-Fallback"] = "1"
 

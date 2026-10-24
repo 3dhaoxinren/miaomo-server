@@ -27,12 +27,19 @@ docker run --rm --network none --tmpfs /data \
   miaomo-server-tests:test python -m pytest -q \
   tests/test_photo_color_profiles.py tests/test_eink_warm.py \
   tests/test_image_processing.py tests/test_json_renderer.py \
-  tests/test_unit_renderer.py tests/test_unit_cache.py tests/test_local_edition.py
+  tests/test_unit_renderer.py tests/test_unit_cache.py tests/test_local_edition.py \
+  tests/test_refresh_force_headers.py tests/test_auth.py
 ```
 
 这组回归覆盖本地版、四色与自然暖调、照片处理和渲染。它是发布验证子集，不代表 `tests` 目录中的全部历史测试均已验证。探索完整测试集时也请使用独立容器和临时数据，勿挂载生产 `data`。
 
+`test_refresh_force_headers.py` 覆盖相同图片手动强制刷新、普通轮询去重、渲染失败后的重试和设备鉴权失败；检查 `X-Pending-Refresh` 与现有设备识别的 `X-Preview-Push` 只在成功消费手动请求时一并返回。
+
 若直接在 Linux 开发环境运行，从 `source/backend` 安装 `requirements-dev.txt`，执行 `python scripts/build_native_dither.py` 后再运行上述 pytest 列表；还需 C++17 编译器、libopus、FreeType 和仓库提供的字体。
+
+## A1 固件适配
+
+构建与验证入口位于 [firmware/esp32-c3-a1](../firmware/esp32-c3-a1/README.md)。构建需要用户自行提供精确匹配的应用基线，以及支持 `rv32imc/ilp32` 的 ESP32 RISC-V 工具链；机器码验证使用 Unicorn。构建产物不会自动刷入设备，输入镜像和设备数据不提交到仓库。没有真实硬件的验证只能确认命令、数据、寄存器和超时路径，不能替代实屏观察。
 
 ## 安装与恢复
 
