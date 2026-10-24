@@ -1,0 +1,60 @@
+miaomo-server / 喵墨服务端
+
+InkSight source attribution
+--------------------------
+This project is independently maintained from InkSight:
+https://github.com/datascale-ai/inksight
+Base revision: ea73138e8f69b8632d39295afeab32c3560d92c4
+Copyright (c) 2026 datascale-ai.
+
+The complete original MIT license and copyright notice are preserved without
+modification in LICENSE and source/LICENSE. Local changes include the account-free
+LAN console, frame workspace, photo editing/color profiles, backup/restore and
+router deployment tooling. This distribution is not an official InkSight release
+and does not imply endorsement by the upstream authors. See UPSTREAM.md.
+
+"LAN only" describes the supported deployment environment of this account-free
+application. It does not add a restriction to the original MIT license.
+
+Independent color-algorithm reference
+------------------------------------
+The natural-warm color profile was independently implemented with the numerical
+behavior of the einkwarm natural/std/Floyd-Steinberg profile as a reference:
+https://github.com/atunverse/moink/tree/081af81ec05c6a66f9fe6d5f598bcf229eff8723
+The referenced implementation and web-page source are not included. This reference
+credit does not describe moink as MIT-licensed or relicense its source code.
+
+Separately licensed fonts
+------------------------
+Font files are not relicensed under the program's MIT license. Complete notices,
+source URLs, hashes and corresponding bitmap-font sources are supplied under:
+source/backend/fonts/licenses/
+
+Inter: Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter).
+SIL Open Font License 1.1; see Inter-LICENSE.txt.
+
+Lora: Copyright 2011 The Lora Project Authors
+(https://github.com/cyrealtype/Lora-Cyrillic), Reserved Font Name "Lora".
+SIL Open Font License 1.1; see Lora-OFL.txt.
+
+Noto Serif SC: (c) 2017-2024 Adobe (http://www.adobe.com/).
+SIL Open Font License 1.1; see NotoSerifSC-LICENSE.txt and the exact copyright
+extracted from the bundled font in NotoSerifSC-COPYRIGHT.extracted.txt.
+
+WenQuanYi Bitmap Song 0.9.9.8:
+(C) 2004-2010 WenQuanYi Project Board of Trustees and Qianqian Fang.
+GPL version 2 with the font embedding exception in the original source and
+WenQuanYi-README.txt / WenQuanYi-debian-copyright.txt. The complete GPL text is in
+WenQuanYi-COPYING-GPL-2.0.txt. Corresponding editable BDF source, prepared subsets,
+modification notes and build instructions are in wqy-source/. The historical
+wqy-zenhei-13.pcf filename also contains Bitmap Song, not the Zen Hei vector font.
+The original WenQuanYi README has separate GFDL 1.2-or-later terms; its text and
+the complete GFDL license are preserved alongside it.
+
+Other bundled assets and dependencies
+------------------------------------
+The retained backend icons and web public images are inherited from the pinned
+InkSight distribution. Package dependencies remain subject to their respective
+licenses. package-lock.json and requirements.txt identify dependencies; installed
+packages contain their own notices. This source repository does not distribute
+node_modules, Android APKs, private device data or user photo libraries.

@@ -1,0 +1,13 @@
+{
+  "admin/services/inksight": {
+    "title": "InkSight 墨水屏",
+    "order": 85,
+    "action": {
+      "type": "view",
+      "path": "services/inksight"
+    },
+    "depends": {
+      "fs": {"/opt/inksight/compose.yml": "file"}
+    }
+  }
+}

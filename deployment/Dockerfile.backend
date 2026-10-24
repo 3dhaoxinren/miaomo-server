@@ -1,0 +1,25 @@
+FROM python:3.11-slim-bookworm@sha256:0a310eeecf4e1f5a0743f9a6520c90c88d089c903ca5fd283f501e3a805f5f89 AS runtime-base
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 TZ=Asia/Shanghai
+RUN apt-get update && apt-get install -y --no-install-recommends libopus0 libfreetype6 ca-certificates tzdata && rm -rf /var/lib/apt/lists/*
+WORKDIR /app/backend
+COPY source/backend/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+COPY source/backend /app/backend
+COPY source/LICENSE /app/LICENSE
+COPY NOTICE /app/NOTICE
+RUN mkdir -p /data/uploads && ln -s /data/inksight.db /app/backend/inksight.db && ln -s /data/cache.db /app/backend/cache.db && ln -s /data/uploads /app/backend/runtime_uploads && \
+    cd /app/backend/fonts/truetype && for name in NotoSerifSC-ExtraLight NotoSerifSC-Light; do ln -s NotoSerifSC-Regular.ttf "$name.ttf"; done && ln -s NotoSerifSC-Bold.ttf NotoSerifSC-ExtraBold.ttf
+COPY deployment/start_backend.py /app/start_backend.py
+CMD ["python", "/app/start_backend.py"]
+
+FROM python:3.11-slim-bookworm@sha256:0a310eeecf4e1f5a0743f9a6520c90c88d089c903ca5fd283f501e3a805f5f89 AS native-build
+RUN sed -i 's|http://deb.debian.org/debian-security|https://mirrors.ustc.edu.cn/debian-security|g; s|http://deb.debian.org/debian|https://mirrors.ustc.edu.cn/debian|g' /etc/apt/sources.list.d/debian.sources
+RUN apt-get update && apt-get install -y --no-install-recommends g++ && rm -rf /var/lib/apt/lists/*
+WORKDIR /native
+COPY source/backend/core/native/eink_dither.cpp ./
+RUN g++ -O3 -std=c++17 -fPIC -shared eink_dither.cpp -o libeink_dither.so
+
+FROM runtime-base
+COPY --from=native-build /native/libeink_dither.so /app/backend/core/native/libeink_dither.so
+# Fail the build if either native transport is missing or cannot load.
+RUN python -c "from PIL import Image; from core.native_dither import atkinson_bw,atkinson_palette,eink_warm; im=Image.new('RGB',(16,16),'red'); assert atkinson_bw(im).size==(16,16); assert atkinson_palette(im,4).size==(16,16); warm=eink_warm(im); assert warm.size==(16,16) and warm.mode=='P' and set(warm.getdata())=={3}"

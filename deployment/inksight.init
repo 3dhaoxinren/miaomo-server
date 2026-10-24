@@ -1,0 +1,13 @@
+#!/bin/sh /etc/rc.common
+START=99
+STOP=10
+start() {
+    /usr/bin/docker compose -f /opt/inksight/compose.yml --project-directory /opt/inksight up -d
+}
+stop() {
+    /usr/bin/docker compose -f /opt/inksight/compose.yml --project-directory /opt/inksight stop
+}
+restart() {
+    stop
+    start
+}

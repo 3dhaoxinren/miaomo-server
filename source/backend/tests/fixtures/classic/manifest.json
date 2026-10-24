@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "size": [
+    37,
+    23
+  ],
+  "profile": "classic",
+  "palette_order": [
+    "black",
+    "white",
+    "yellow",
+    "red"
+  ],
+  "oracle": "Pre-warm snapshot enhance_photo_for_eink, independent binary64 scalar Atkinson matching original C++ kernel/tie order/clamping",
+  "baseline_image_processing_sha256": "051c1368347f6cdd1d79533b29a64a13d709dc6079c21e0cdeff89de70fcfa34",
+  "baseline_native_sha256": "47aa08fb50164d572b21a8aa9693e0aadec4d5b93ed2692a8a310a397e6440b0",
+  "input_sha256": "e48ad69c277a4d114fb59c19217fefbca677d0c50db00f8ceeea3b46de96e691",
+  "output_sha256": "936bade146acfacf9198ec57ea114fffb2e0093baae66270708f90f36885e692"
+}

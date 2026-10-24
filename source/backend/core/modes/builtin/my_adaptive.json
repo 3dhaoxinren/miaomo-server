@@ -1,0 +1,42 @@
+{
+  "mode_id": "MY_ADAPTIVE",
+  "display_name": "相框",
+  "description": "上传本地照片（至多6张），循环播放",
+  "icon": "my_adaptive",
+  "cacheable": false,
+  "content": {
+    "type": "static",
+    "static_data": {
+      "image_url": ""
+    },
+    "fallback": {
+      "image_url": ""
+    }
+  },
+  "layout": {
+    "status_bar": {
+      "line_width": 0
+    },
+    "body": [
+      {
+        "type": "image",
+        "field": "image_url",
+        "width": 400,
+        "height": 300,
+        "x": 0,
+        "y": 0,
+        "fit": "cover",
+        "photo_enhance": true,
+        "photo_color_profile": "einkwarm",
+        "photo_color_profile_field": "photo_color_profile",
+        "align_x": "center",
+        "align_y": "center",
+        "margin_bottom": 0
+      }
+    ],
+    "footer": {
+      "line_width": 0
+    },
+    "fullscreen": true
+  }
+}

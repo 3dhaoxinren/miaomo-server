@@ -1,0 +1,63 @@
+[
+  {
+    "file": "Inter-LICENSE.txt",
+    "source_url": "https://github.com/rsms/inter/blob/master/LICENSE.txt",
+    "git_blob": "9b2ca37b3ffc77391d8b2ebef4a974ef32bf46ea",
+    "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+    "bytes": 4380
+  },
+  {
+    "file": "Lora-OFL.txt",
+    "source_url": "https://github.com/google/fonts/blob/main/ofl/lora/OFL.txt",
+    "git_blob": "d0ce7fe062e60eaa92c4af3ee1bebe81c5141b4e",
+    "sha256": "1d9a970809ac804b582a6ce7f0ebc4e7fefcbfd7ff6299cad35ee656a21be716",
+    "bytes": 4423
+  },
+  {
+    "file": "NotoSerifSC-LICENSE.txt",
+    "source_url": "https://github.com/notofonts/noto-cjk/blob/main/Serif/LICENSE",
+    "git_blob": "d952d62c065f3f35fb83a173496e90b21525aef3",
+    "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+    "bytes": 4301
+  },
+  {
+    "file": "InkSight-LICENSE.txt",
+    "source_url": "https://github.com/datascale-ai/inksight/blob/ea73138e8f69b8632d39295afeab32c3560d92c4/LICENSE",
+    "git_blob": "8fe07629252814c58558758fb38c081566993ef8",
+    "sha256": "4560dae1eb81dd68329a472d6d152a0f2cd710085be0a42443761b8bf431278c",
+    "bytes": 1069
+  },
+  {
+    "file": "WenQuanYi-README.txt",
+    "source_url": "https://github.com/deepin-community/xfonts-wqy/blob/master/README",
+    "git_blob": "3c27099068efd369d199b4d889713a454a4a76ff",
+    "sha256": "a342b6425f2645c00bb6a28334fd77de5357cd587a0ae57f6dc43b2f0a94416b",
+    "bytes": 5618
+  },
+  {
+    "file": "WenQuanYi-COPYING-GPL-2.0.txt",
+    "source_url": "https://github.com/deepin-community/xfonts-wqy/blob/master/COPYING",
+    "git_blob": "30438f84b7a6c0d111493b9daf9412a69172c562",
+    "sha256": "871c2a85e6bbf7bec65043820b706a265ed95d4e58c577fbb2c9f60c39c26ca7",
+    "bytes": 18007
+  },
+  {
+    "file": "WenQuanYi-debian-copyright.txt",
+    "source_url": "https://github.com/deepin-community/xfonts-wqy/blob/master/debian/copyright",
+    "git_blob": "1cfb70a499370d21e237ce01ef1d5d0fec0ba392",
+    "sha256": "dcd357a287a4df754897bd49c067c13d6c38bf65a3356b57783b8d6f51a2876d",
+    "bytes": 2871
+  },
+  {
+    "file": "WenQuanYi-README-GFDL-1.2.txt",
+    "source_url": "https://github.com/spdx/license-list-data/blob/main/text/GFDL-1.2-no-invariants-only.txt",
+    "git_blob": "83c375aba10545b8ad289a7349f0e0b8838c5a71",
+    "sha256": "1118a91a3290bc8981f922dfcffc1a619592c007aa31b7a98cee694d933c86ce",
+    "bytes": 20272
+  },
+  {
+    "file": "NotoSerifSC-COPYRIGHT.extracted.txt",
+    "source": "Exact nameID 0 from bundled NotoSerifSC-Regular.ttf and -Bold.ttf plus newline",
+    "sha256": "872f89e241453681b64727b97a703fde2bc250ac62d12657126c0030df66d11a"
+  }
+]

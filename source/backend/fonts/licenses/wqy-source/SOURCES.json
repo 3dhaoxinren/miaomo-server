@@ -1,0 +1,26 @@
+[
+  {
+    "file": "wenquanyi_10pt.bdf",
+    "source_url": "https://raw.githubusercontent.com/deepin-community/xfonts-wqy/9c5ad0a1230d97a255560456efca82ea1a5a0b82/wenquanyi_10pt.bdf",
+    "source_ref": "9c5ad0a1230d97a255560456efca82ea1a5a0b82",
+    "git_blob": "e21140319bf8569556ae8fbbd389c3cc2a11ce34",
+    "sha256": "44e042ef7843c3c5b4fcb723a3d6cea7340e6f5a773260eb31b6ee538567d01c",
+    "bytes": 4470208
+  },
+  {
+    "file": "wenquanyi_12pt.bdf",
+    "source_url": "https://raw.githubusercontent.com/deepin-community/xfonts-wqy/9c5ad0a1230d97a255560456efca82ea1a5a0b82/wenquanyi_12pt.bdf",
+    "source_ref": "9c5ad0a1230d97a255560456efca82ea1a5a0b82",
+    "git_blob": "ee25c23dadda55edd64bfbda899cd80a9b6772fd",
+    "sha256": "ff151cb88e43384993da04b202cf6b68331f6ffa4a0c14579ff80527dc15211b",
+    "bytes": 6780566
+  },
+  {
+    "file": "wenquanyi_13px.bdf",
+    "source_url": "https://raw.githubusercontent.com/deepin-community/xfonts-wqy/9c5ad0a1230d97a255560456efca82ea1a5a0b82/wenquanyi_13px.bdf",
+    "source_ref": "9c5ad0a1230d97a255560456efca82ea1a5a0b82",
+    "git_blob": "66c92a33898436c1741c7c730538f2abd437eff2",
+    "sha256": "f6885d4238abcad1a3323d70916fb398dc6ac6743ce4a467e691e745ed5b0731",
+    "bytes": 3444938
+  }
+]

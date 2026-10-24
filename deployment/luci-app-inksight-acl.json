@@ -1,0 +1,5 @@
+{
+  "luci-app-inksight": {
+    "description": "Open the local InkSight screen interface"
+  }
+}
