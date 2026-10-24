@@ -3,7 +3,7 @@
   "display_name": "Photo Frame",
   "icon": "my_adaptive",
   "cacheable": false,
-  "description": "Upload up to 6 photos, cycle on each refresh",
+  "description": "Upload photos, cycle on each refresh",
   "content": {
     "type": "static",
     "static_data": {

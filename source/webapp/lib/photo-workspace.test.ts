@@ -18,6 +18,23 @@ test("photo drafts replace every image field while preserving other modes and fr
   assert.deepEqual(base.MY_ADAPTIVE.image_urls, ["old"]);
 });
 
+test("saving and reloading a large album preserves every photo, order and edit", () => {
+  const images = Array.from({ length: 40 }, (_, i) => `/api/uploads/photo-${i}.png`);
+  const edits = images.map((url, i) => ({ ...newPhotoEdit(url), rotation: i % 4 * 90 }));
+  const calendar = { reminders: { "2026-12-01": "Keep me" } };
+  const saved = mergePhotoDraft({ CALENDAR: calendar, MY_ADAPTIVE: { dithering: "ordered" } }, images, edits);
+  const reloaded = JSON.parse(JSON.stringify(saved));
+  assert.deepEqual(reloaded.MY_ADAPTIVE.image_urls, images);
+  assert.deepEqual(reloaded.MY_ADAPTIVE.photo_edits, edits);
+  assert.deepEqual(reloaded.CALENDAR, calendar);
+  assert.equal(reloaded.MY_ADAPTIVE.dithering, "ordered");
+  const nextImages = [...images, "/api/uploads/new-photo.png"];
+  const nextEdits = [...edits, newPhotoEdit(nextImages.at(-1)!)];
+  const added = mergePhotoDraft(reloaded, nextImages, nextEdits);
+  assert.deepEqual(added.MY_ADAPTIVE.image_urls, nextImages);
+  assert.deepEqual(added.MY_ADAPTIVE.photo_edits, nextEdits);
+});
+
 test("preview identity changes for device, dimensions, color, URL and edit version", () => {
   const edit = newPhotoEdit("source-A");
   const key = photoPreviewIdentity("A", 768, 552, 4, "photo-A", edit);
